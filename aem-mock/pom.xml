@@ -6,15 +6,15 @@
     <groupId>to.adapt</groupId>
     <artifactId>to.adapt.junit5demo.parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../parent/pom.xml</relativePath>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <groupId>to.adapt</groupId>
-  <artifactId>to.adapt.junit5demo.core</artifactId>
+  <artifactId>to.adapt.junit5demo.aem-mock</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>bundle</packaging>
 
-  <name>junit5demo Core</name>
+  <name>JUnit 5 and AEM Mocks</name>
 
   <dependencies>
 

@@ -1,9 +1,9 @@
 package to.adapt.junit5demo;
 
 /**
- * Example service interface
+ * Example service
  */
-interface MyService {
+public interface MyService {
 
   // not methods
 

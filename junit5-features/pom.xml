@@ -6,11 +6,11 @@
     <groupId>to.adapt</groupId>
     <artifactId>to.adapt.junit5demo.parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../parent/pom.xml</relativePath>
+    <relativePath>../parent/pom.xml</relativePath>
   </parent>
 
   <groupId>to.adapt</groupId>
-  <artifactId>to.adapt.junit5demo.junit5features</artifactId>
+  <artifactId>to.adapt.junit5demo.junit5-features</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>jar</packaging>
 

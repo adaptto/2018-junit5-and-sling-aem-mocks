@@ -14,10 +14,12 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
+  <name>JUnit 5 Demo</name>
+
   <modules>
     <module>parent</module>
-    <module>junit5features</module>
-    <module>core</module>
+    <module>junit5-features</module>
+    <module>aem-mock</module>
   </modules>
 
 </project>
