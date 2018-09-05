@@ -8,11 +8,9 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-
 import to.adapt.junit5demo.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
-@SuppressWarnings("null")
 public class CurrentDateTest {
 
   private final AemContext context = AppAemContext.newAemContext();

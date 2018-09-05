@@ -2,8 +2,8 @@ package to.adapt.junit5demo.components;
 
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static to.adapt.junit5demo.components.Carousel.NN_SLIDES;
 
 import java.util.stream.Collectors;
 
@@ -18,30 +18,20 @@ import com.google.common.collect.ImmutableList;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-
-import static to.adapt.junit5demo.components.Carousel.NN_SLIDES;
 import to.adapt.junit5demo.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
-@SuppressWarnings("null")
 public class CarouselTest {
 
   private final AemContext context = AppAemContext.newAemContext();
 
-  private Page page;
   private Resource resource;
 
   @BeforeEach
   public void setUp() {
-    page = context.create().page("/content/mypage");
+    Page page = context.create().page("/content/mypage");
     resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
     context.currentResource(resource);
-  }
-
-  @Test
-  public void testId() {
-    Carousel underTest = context.request().adaptTo(Carousel.class);
-    assertNotNull(underTest.getId());
   }
 
   @Test

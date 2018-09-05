@@ -23,7 +23,6 @@ public class Carousel {
 
   static final String NN_SLIDES = "slides";
 
-  private String id;
   private List<Image> slideImages;
 
   @Self
@@ -33,16 +32,9 @@ public class Carousel {
 
   @PostConstruct
   private void activate() {
-    id = buildId();
     slideImages = buildSlideImages();
   }
 
-  private String buildId() {
-    // build unique id from component path.
-    return "carousel-" + request.getResource().getPath().hashCode();
-  }
-
-  @SuppressWarnings("null")
   private List<Image> buildSlideImages() {
     List<Image> images = new ArrayList<>();
 
@@ -62,16 +54,6 @@ public class Carousel {
     return images;
   }
 
-  /**
-   * @return Unique ID of this component that can be used in HTML markup
-   */
-  public String getId() {
-    return id;
-  }
-
-  /**
-   * @return List of images for each slide
-   */
   public List<Image> getSlideImages() {
     return this.slideImages;
   }
