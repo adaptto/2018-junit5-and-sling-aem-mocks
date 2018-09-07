@@ -1,4 +1,4 @@
-package to.adapt.junit5demo.junit4.testcontext;
+package to.adapt.junit5demo.testcontext;
 
 import static io.wcm.testing.mock.wcmio.caconfig.ContextPlugins.WCMIO_CACONFIG;
 import static org.apache.sling.testing.mock.caconfig.ContextPlugins.CACONFIG;

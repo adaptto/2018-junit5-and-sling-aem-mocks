@@ -1,4 +1,4 @@
-package to.adapt.junit5demo.junit4.components;
+package to.adapt.junit5demo.components;
 
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
 import static org.junit.Assert.assertEquals;
@@ -17,11 +17,9 @@ import com.day.cq.wcm.api.Page;
 import com.google.common.collect.ImmutableList;
 
 import io.wcm.testing.mock.aem.junit.AemContext;
-import to.adapt.junit5demo.components.Carousel;
-import to.adapt.junit5demo.components.MailserverNotConfiguredException;
-import to.adapt.junit5demo.junit4.testcontext.AppAemContext;
+import to.adapt.junit5demo.testcontext.AppAemContext;
 
-public class CarouselJUnit4Test {
+public class CarouselTest {
 
   @Rule
   public final AemContext context = AppAemContext.newAemContext();

@@ -1,4 +1,4 @@
-package to.adapt.junit5demo.junit4.components;
+package to.adapt.junit5demo.components;
 
 import static org.junit.Assert.assertTrue;
 
@@ -7,10 +7,9 @@ import org.junit.Rule;
 import org.junit.Test;
 
 import io.wcm.testing.mock.aem.junit.AemContext;
-import to.adapt.junit5demo.components.CurrentDate;
-import to.adapt.junit5demo.junit4.testcontext.AppAemContext;
+import to.adapt.junit5demo.testcontext.AppAemContext;
 
-public class CurrentDateJUnit4Test {
+public class CurrentDateTest {
 
   @Rule
   public final AemContext context = AppAemContext.newAemContext();
