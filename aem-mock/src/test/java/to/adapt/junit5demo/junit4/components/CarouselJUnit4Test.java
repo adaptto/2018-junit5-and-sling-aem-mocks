@@ -1,42 +1,41 @@
-package to.adapt.junit5demo.junit5.components;
+package to.adapt.junit5demo.junit4.components;
 
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static to.adapt.junit5demo.components.Carousel.NN_SLIDES;
 
 import java.util.stream.Collectors;
 
 import org.apache.sling.api.resource.Resource;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 
 import com.adobe.cq.wcm.core.components.models.Image;
 import com.day.cq.wcm.api.Page;
 import com.google.common.collect.ImmutableList;
 
-import io.wcm.testing.mock.aem.junit5.AemContext;
-import io.wcm.testing.mock.aem.junit5.AemContextExtension;
+import io.wcm.testing.mock.aem.junit.AemContext;
 import to.adapt.junit5demo.components.Carousel;
-import to.adapt.junit5demo.junit5.testcontext.AppAemContext;
+import to.adapt.junit5demo.junit4.testcontext.AppAemContext;
 
-@ExtendWith(AemContextExtension.class)
-class CarouselTest {
+public class CarouselJUnit4Test {
 
-  private final AemContext context = AppAemContext.newAemContext();
+  @Rule
+  public final AemContext context = AppAemContext.newAemContext();
 
   private Resource resource;
 
-  @BeforeEach
-  void setUp() {
+  @Before
+  public void setUp() {
     Page page = context.create().page("/content/mypage");
     resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
     context.currentResource(resource);
   }
 
   @Test
-  void testSlideImageUrls() {
+  public void testSlideImageUrls() {
     context.create().asset("/content/dam/slides/slide1.png", 80, 30, "image/png");
     context.create().asset("/content/dam/slides/slide2.png", 80, 30, "image/png");
 
@@ -55,7 +54,7 @@ class CarouselTest {
   }
 
   @Test
-  void testEmptySlideImageUrls() {
+  public void testEmptySlideImageUrls() {
     Carousel underTest = context.request().adaptTo(Carousel.class);
     assertTrue(underTest.getSlideImages().isEmpty());
   }

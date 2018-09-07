@@ -12,7 +12,7 @@ import to.adapt.junit5demo.components.CurrentDate;
 import to.adapt.junit5demo.junit5.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
-class CurrentDateTest {
+class CurrentDateJUnit5Test {
 
   private final AemContext context = AppAemContext.newAemContext();
 
