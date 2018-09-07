@@ -2,6 +2,7 @@ package to.adapt.junit5demo.junit5.components;
 
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static to.adapt.junit5demo.components.Carousel.NN_SLIDES;
 
@@ -19,6 +20,7 @@ import com.google.common.collect.ImmutableList;
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
 import to.adapt.junit5demo.components.Carousel;
+import to.adapt.junit5demo.components.MailserverNotConfiguredException;
 import to.adapt.junit5demo.junit5.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
@@ -58,6 +60,15 @@ class CarouselJUnit5Test {
   void testEmptySlideImageUrls() {
     Carousel underTest = context.request().adaptTo(Carousel.class);
     assertTrue(underTest.getSlideImages().isEmpty());
+  }
+
+  @Test
+  public void testSendSlides() {
+    Carousel underTest = context.request().adaptTo(Carousel.class);
+    assertThrows(MailserverNotConfiguredException.class, () -> {
+      // try to send slides via mail without having a mail server configured
+      underTest.sendSlides();
+    });
   }
 
 }

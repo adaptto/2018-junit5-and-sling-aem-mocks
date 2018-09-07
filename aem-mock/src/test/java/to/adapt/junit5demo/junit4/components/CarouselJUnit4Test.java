@@ -18,6 +18,7 @@ import com.google.common.collect.ImmutableList;
 
 import io.wcm.testing.mock.aem.junit.AemContext;
 import to.adapt.junit5demo.components.Carousel;
+import to.adapt.junit5demo.components.MailserverNotConfiguredException;
 import to.adapt.junit5demo.junit4.testcontext.AppAemContext;
 
 public class CarouselJUnit4Test {
@@ -57,6 +58,13 @@ public class CarouselJUnit4Test {
   public void testEmptySlideImageUrls() {
     Carousel underTest = context.request().adaptTo(Carousel.class);
     assertTrue(underTest.getSlideImages().isEmpty());
+  }
+
+  @Test(expected = MailserverNotConfiguredException.class)
+  public void testSendSlides() {
+    Carousel underTest = context.request().adaptTo(Carousel.class);
+    // try to send slides via mail without having a mail server configured
+    underTest.sendSlides();
   }
 
 }

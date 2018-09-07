@@ -57,8 +57,19 @@ public class Carousel {
     return images;
   }
 
+  /**
+   * @return Slide images
+   */
   public List<Image> getSlideImages() {
     return this.slideImages;
+  }
+
+  /**
+   * Try to send the slides via E-Mail
+   */
+  public void sendSlides() {
+    // this is just an example to demonstrate exception capturing in unit test
+    throw new MailserverNotConfiguredException("No mailserver configured");
   }
 
 }
