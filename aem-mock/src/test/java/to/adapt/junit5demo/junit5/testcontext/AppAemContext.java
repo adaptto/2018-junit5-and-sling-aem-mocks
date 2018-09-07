@@ -1,4 +1,4 @@
-package to.adapt.junit5demo.testcontext;
+package to.adapt.junit5demo.junit5.testcontext;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextBuilder;

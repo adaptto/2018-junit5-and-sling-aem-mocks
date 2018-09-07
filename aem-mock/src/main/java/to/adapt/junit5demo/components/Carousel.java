@@ -21,7 +21,10 @@ import com.adobe.cq.wcm.core.components.models.Image;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class Carousel {
 
-  static final String NN_SLIDES = "slides";
+  /**
+   * Node name for slides child node
+   */
+  public static final String NN_SLIDES = "slides";
 
   private List<Image> slideImages;
 

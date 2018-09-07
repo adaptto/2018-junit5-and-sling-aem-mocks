@@ -1,4 +1,4 @@
-package to.adapt.junit5demo.components;
+package to.adapt.junit5demo.junit5.components;
 
 import static com.day.cq.commons.DownloadResource.PN_REFERENCE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,24 +18,25 @@ import com.google.common.collect.ImmutableList;
 
 import io.wcm.testing.mock.aem.junit5.AemContext;
 import io.wcm.testing.mock.aem.junit5.AemContextExtension;
-import to.adapt.junit5demo.testcontext.AppAemContext;
+import to.adapt.junit5demo.components.Carousel;
+import to.adapt.junit5demo.junit5.testcontext.AppAemContext;
 
 @ExtendWith(AemContextExtension.class)
-public class CarouselTest {
+class CarouselTest {
 
   private final AemContext context = AppAemContext.newAemContext();
 
   private Resource resource;
 
   @BeforeEach
-  public void setUp() {
+  void setUp() {
     Page page = context.create().page("/content/mypage");
     resource = context.create().resource(page.getContentResource().getPath() + "/myresource");
     context.currentResource(resource);
   }
 
   @Test
-  public void testSlideImageUrls() {
+  void testSlideImageUrls() {
     context.create().asset("/content/dam/slides/slide1.png", 80, 30, "image/png");
     context.create().asset("/content/dam/slides/slide2.png", 80, 30, "image/png");
 
@@ -54,7 +55,7 @@ public class CarouselTest {
   }
 
   @Test
-  public void testEmptySlideImageUrls() {
+  void testEmptySlideImageUrls() {
     Carousel underTest = context.request().adaptTo(Carousel.class);
     assertTrue(underTest.getSlideImages().isEmpty());
   }
